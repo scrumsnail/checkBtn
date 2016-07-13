@@ -35,7 +35,12 @@
     [self addSubview:_checkBox];
 }
 - (void)refreshWith:(BOOL)selected{
-    self.checkBox.selected = selected;
+    if (self.checkBox.isSelected) {
+        self.checkBox.selected = NO;
+    }else{
+        self.checkBox.selected = selected;
+    }
+    
 }
 
 - (void)btnClick{
